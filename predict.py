@@ -9,7 +9,7 @@ import nltk
 from keras.models import load_model 
 
 model=load_model("sentiment.h5")
-
+inp=input("Enter something::")
 inp=re.sub("[^a-zA-Z]"," ",inp)
 value=nltk.word_tokenize(inp)
 value=[wordvec[x] for x in value if x not in set(stopwords.words("english")) and x in wordvec.wv.vocab]
